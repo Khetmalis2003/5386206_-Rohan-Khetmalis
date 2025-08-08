@@ -1,0 +1,17 @@
+int diagonalDifference(int rows, int cols, int **matrix) {
+    long sum1 = 0, sum2 = 0;
+    int r = 0, c = 0;
+    
+   
+    for (r = 0; r < rows; r++) {
+        sum1 += matrix[r][r];
+    }
+
+    
+    for (r = 0, c = cols - 1; r < rows && c >= 0; r++, c--) {
+        sum2 += matrix[r][c];
+    }
+
+    long diff = sum1 - sum2;
+    return diff < 0 ? -diff : diff;
+}

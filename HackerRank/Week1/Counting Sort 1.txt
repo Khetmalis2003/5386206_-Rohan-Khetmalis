@@ -1,0 +1,13 @@
+int* countingSortsolu(int n, int* data, int* outSize) {
+    int lim = 100;
+    int *countArr = malloc(lim * sizeof(int));
+    for (int i = 0; i < lim; i++) {
+        countArr[i] = 0;
+    }
+    for (int k = 0; k < n; k++) {
+        int val = data[k];
+        countArr[val] = countArr[val] + 1;
+    }
+    *outSize = lim;
+    return countArr;
+}
